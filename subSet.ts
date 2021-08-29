@@ -11,3 +11,5 @@ function subSet(numbers: number[]) {
 }
 
 subSet([2, 7, 11, 15]);
+
+// Language: typescript
