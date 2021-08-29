@@ -1,13 +1,11 @@
-function twoSum(numbers: number[], target: number) {
+function twoSum(numbers: number[], target: number): number[] | undefined {
   const hash: Record<number, number> = {};
   for (let i = 0; i < numbers.length; i++) {
-    const num = numbers[i];
-    if (hash[num]) {
-      return [hash[num], i];
+    const complement = target - numbers[i];
+    if (complement in hash) {
+      return [hash[complement], i];
     }
-    hash[target - num] = i;
+    hash[numbers[i]] = i;
   }
-  return [];
 }
-
-twoSum([2, 7, 11, 15], 9); // [0, 1]
+console.log(twoSum([2, 7, 11, 15], 9)); // [0, 1]
